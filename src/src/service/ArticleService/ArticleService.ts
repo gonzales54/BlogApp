@@ -29,3 +29,6 @@ export default class ArticleService {
     return article;
   }
 }
+
+const Article = new ArticleService();
+Article.connectToDatabase();
