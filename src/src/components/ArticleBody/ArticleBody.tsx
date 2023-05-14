@@ -14,7 +14,9 @@ export default function ArticleBody({ article }: { article: IArticle }) {
           {convertDateToYYMMDD(article.createdAt)}
         </span>
       </div>
-      <h2 className={`${kleeOne.className} ${style.articleTitle}`}>{article.title}</h2>
+      <h2 className={`${kleeOne.className} ${style.articleTitle}`}>
+        {article.title}
+      </h2>
       <div className={style.markdown}>
         <ReactMarkdown
           components={{

@@ -1,7 +1,7 @@
 import ArticleCard from "../ArticleCard/ArticleCard";
 import style from "./TopArticle.module.scss";
 import useTopArticle from "./useTopArticle";
-import IArticle from "@/types/ArticleInterface";
+import IArticle from "@/types/Article/IArticle";
 
 export default function TopArticle({ article }: { article: IArticle }) {
   const { width } = useTopArticle();

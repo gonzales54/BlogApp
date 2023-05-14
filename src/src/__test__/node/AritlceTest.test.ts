@@ -1,7 +1,6 @@
 import { describe, beforeAll, afterAll, it, expect } from "@jest/globals";
 import mongoose from "mongoose";
 import connectToDatabase from "@/lib/mongoose/connect/connect";
-import ArticleModel from "@/lib/mongoose/models/ArticleModel";
 import ArticleService from "@/service/ArticleService/ArticleService";
 
 const TestArticle = [
@@ -100,8 +99,8 @@ describe("Article Model Test", () => {
     expect(articles.length).toBe(7);
   });
 
-  it('getAnArticle result to be 1', async () => {
-    const article = await ArticleService.getAnArticle('test-post-1');
+  it("getAnArticle result to be 1", async () => {
+    const article = await ArticleService.getAnArticle("test-post-1");
     expect(article).not.toBeNull();
-  })
+  });
 });

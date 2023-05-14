@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./ArticleCard.module.scss";
 
+import IArticle from "@/types/Article/IArticle";
+import StyleInterface from "@/types/StyleInterface/StyleInterface";
 import convertDateToYYMMDD from "@/utility/ConvertDateToYYMMDD";
 import { kleeOne, roboto } from "@/utility/font";
 import NaturePhoto from "@Image/nature.jpg";
-import IArticle from "@/types/Article/IArticle";
-import StyleInterface from "@/types/StyleInterface/StyleInterface";
 
 export default function ArticleCard({
   style = styles,

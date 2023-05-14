@@ -1,0 +1,85 @@
+.dashBoardArticleList {
+  height: calc(100% - 77px);
+  max-height: calc(100% - 77px);
+  padding: 2rem 1rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .title {
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+  }
+  .articleList {
+    .article {
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      outline: solid 1px rgba(#1e293b, 0.2);
+      &:nth-child(odd) {
+        background-color: #fff;
+      }
+      &:nth-child(even) {
+        background-color: rgba(#1e293b, 0.1);
+      }
+      &:first-child {
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+      }
+      &:last-child {
+        border-bottom-left-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+      }
+      .articleTitle {
+        font-size: 1.5rem;
+      }
+      .articleButtonContainer {
+        margin-left: auto;
+        .handleArticleButton {
+          
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .dashBoardArticleList {
+    height: calc(100% - 69px);
+    max-height: calc(100% - 69px);
+    padding: 2rem 1rem 1.5rem 1rem;
+    .title {
+    }
+    .articleList {
+      .article {
+        .articleLink {
+          .articleTitle {
+          }
+          .articleButtonContainer {
+            .handleArticleButton {
+              
+            }
+          }
+        }
+      }
+    }
+    .pageNation {
+      .pageNationButton {
+      }
+      .pageNationPageLinkButtonContainer {
+        .pageNationPageLinkButton {
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+
+}
+
+@media screen and (max-width: 450px) {
+
+}

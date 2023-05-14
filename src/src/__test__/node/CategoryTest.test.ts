@@ -1,7 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it } from "@jest/globals";
 import mongoose from "mongoose";
 import connectToDatabase from "@/lib/mongoose/connect/connect";
-import CategoryModel from "@/lib/mongoose/models/CategoryModel";
 import CategoryService from "@/service/CategoryService/CategoryService";
 import ICategory from "@/types/Category/ICategory";
 
