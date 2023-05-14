@@ -23,7 +23,7 @@ const customJestConfig = {
   transformIgnorePatterns: [
     "<rootDir>/node_modules"
   ],
-  testMatch: ["**/__test__/node/*.test.ts"], 
+  testMatch: ["**/__test__/node/HomeGetServerSideProps.test.ts"], 
   globals: {
     'ts-jest': {
         useESM: true

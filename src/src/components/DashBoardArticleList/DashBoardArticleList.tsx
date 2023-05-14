@@ -36,7 +36,7 @@ export default function DashBoardArticleList({
 
   return (
     <div className={style.dashBoardArticleList}>
-      <h2 className={`${kleeOne.className} ${style.title}`}>全記事</h2>
+      <h2 className={`${kleeOne.className} ${style.title}`}>記事一覧</h2>
       <div className={style.articleList}>
         {articles
           ? articles.map((article: IArticle) => {
