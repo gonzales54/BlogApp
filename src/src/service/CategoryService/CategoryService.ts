@@ -33,3 +33,6 @@ export default class CategoryService {
     return articles;
   }
 }
+
+const Category = new CategoryService();
+Category.connectToDatabase();
