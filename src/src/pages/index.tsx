@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 import GridArticle from "@/components/GridArticle/GridArticle";
 import Layout from "@/components/Layout/layout";
 import TopArticle from "@/components/TopArticle/TopArticle";
+import connectToDatabase from "@/lib/mongoose/connect/connect";
 import ArticleService from "@/service/ArticleService/ArticleService";
 import IArticle from "@/types/Article/IArticle";
 
@@ -33,6 +34,8 @@ export default function Home({
 }
 
 export const getServerSideProps = async () => {
+  await connectToDatabase();
+
   const articles: IArticle[] = await ArticleService.getArticlesLimitSeven();
   //const categories: ICategory[] = await CategoryService.getAllCategories();
 

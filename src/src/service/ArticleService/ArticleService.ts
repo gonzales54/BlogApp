@@ -4,7 +4,7 @@ import IArticle from "@/types/Article/IArticle";
 import ConvertToJSON from "@/utility/ConvertToJSON";
 
 export default class ArticleService {
-  async connectToDatabase() {
+  static async connectToDatabase() {
     await connectToDatabase();
   }
 
@@ -30,5 +30,3 @@ export default class ArticleService {
   }
 }
 
-const Article = new ArticleService();
-Article.connectToDatabase();
