@@ -10,6 +10,7 @@
     "format": "eslint --fix './src/**/*.{ts,tsx}' && prettier --write './src/**/*.{ts,tsx}'"
   },
   "dependencies": {
+    "@next/env": "^13.4.2",
     "@types/node": "18.15.11",
     "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",
