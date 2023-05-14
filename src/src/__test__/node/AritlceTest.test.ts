@@ -2,6 +2,7 @@ import { describe, beforeAll, afterAll, it, expect } from "@jest/globals";
 import mongoose from "mongoose";
 import connectToDatabase from "@/lib/mongoose/connect/connect";
 import ArticleService from "@/service/ArticleService/ArticleService";
+import ArticleModel from "@/lib/mongoose/models/ArticleModel";
 
 const TestArticle = [
   {
@@ -81,11 +82,11 @@ const TestArticle = [
 describe("Article Model Test", () => {
   beforeAll(async () => {
     await connectToDatabase();
-    //await ArticleModel.create(TestArticle);
+    await ArticleModel.create(TestArticle);
   });
 
   afterAll(async () => {
-    //await ArticleModel.deleteMany({});
+    await ArticleModel.deleteMany({});
     mongoose.connection.close();
   });
 

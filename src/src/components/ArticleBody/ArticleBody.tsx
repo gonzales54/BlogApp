@@ -20,8 +20,8 @@ export default function ArticleBody({ article }: { article: IArticle }) {
       <div className={style.markdown}>
         <ReactMarkdown
           components={{
-            p: ({ node, ...props }) => <p {...props} />,
-            code: ({ node, ...props }) => {
+            p: ({ ...props }) => <p {...props} />,
+            code: ({ ...props }) => {
               return (
                 <div className={style.codeBlock}>
                   {/*
@@ -42,7 +42,7 @@ export default function ArticleBody({ article }: { article: IArticle }) {
                 </div>
               );
             },
-            blockquote: ({ node, ...props }) => {
+            blockquote: ({ ...props }) => {
               return <blockquote className="blockquote" {...props} />;
             },
           }}

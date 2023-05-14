@@ -44,7 +44,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   if (req.method === "DELETE") {
-    const article = await ArticleModel.findOneAndRemove({ _id: req.body._id });
+    await ArticleModel.findOneAndRemove({ _id: req.body._id });
     /*article?.categories.forEach(async (category) => {
       const categories = await Category.findOneAndUpdate(
         { _id: category },

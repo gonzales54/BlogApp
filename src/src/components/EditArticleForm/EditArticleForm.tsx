@@ -14,7 +14,7 @@ export default function EditArticleForm({ article }: { article: IArticle }) {
   useEffect(() => {
     setDescription(article.description);
     setContent(article.content);
-  }, []);
+  }, [article.content, article.description]);
 
   return (
     <div className={style.createArticleForm}>
