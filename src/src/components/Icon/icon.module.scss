@@ -1,0 +1,40 @@
+.searchIconWrap {
+  padding: 0.5rem;
+  display: inline-block;
+  background-color: #14b8a6;
+  border-radius: 0.25rem;
+  .icon {
+    color: #f8fafc;
+  }
+}
+
+.withoutBackgroundColorWrap {
+  padding: 0.5rem;
+  display: inline-block;
+}
+
+.withoutPaddingWrap {
+  display: inline-block;
+}
+
+.icon {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.iconSmall {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.chevronIcon {
+  width: 1.5rem;
+  height: 2rem;
+}
+
+@media screen and (max-width: 450px) {
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

@@ -21,7 +21,7 @@ const TestArticle = [
     content: `# Hello1`,
     categories: [],
     slug: "test-post-1",
-    publish: false,
+    publish: true,
   },
   {
     userID: "1",
@@ -30,7 +30,7 @@ const TestArticle = [
     content: `# Hello2`,
     categories: [],
     slug: "test-post-2",
-    publish: false,
+    publish: true,
   },
   {
     userID: "1",
@@ -39,7 +39,7 @@ const TestArticle = [
     content: `# Hello3`,
     categories: [],
     slug: "test-post-3",
-    publish: false,
+    publish: true,
   },
   {
     userID: "1",
@@ -48,7 +48,7 @@ const TestArticle = [
     content: `# Hello4`,
     categories: [],
     slug: "test-post-4",
-    publish: false,
+    publish: true,
   },
   {
     userID: "1",
@@ -57,7 +57,7 @@ const TestArticle = [
     content: `# Hello5`,
     categories: [],
     slug: "test-post-5",
-    publish: false,
+    publish: true,
   },
   {
     userID: "1",
@@ -66,7 +66,7 @@ const TestArticle = [
     content: `# Hello6`,
     categories: [],
     slug: "test-post-6",
-    publish: false,
+    publish: true,
   },
   {
     userID: "1",
@@ -75,18 +75,18 @@ const TestArticle = [
     content: `# Hello7`,
     categories: [],
     slug: "test-post-7",
-    publish: false,
+    publish: true,
   },
 ];
 
 describe("Article Model Test", () => {
   beforeAll(async () => {
     await connectToDatabase();
-    await ArticleModel.create(TestArticle);
+    //await ArticleModel.create(TestArticle);
   });
 
   afterAll(async () => {
-    await ArticleModel.deleteMany({});
+    //await ArticleModel.deleteMany({});
     mongoose.connection.close();
   });
 

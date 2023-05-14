@@ -27,11 +27,11 @@ const TestCategory = [
 describe("Category Model Test", () => {
   beforeAll(async () => {
     await connectToDatabase();
-    await CategoryModel.create(TestCategory);
+    //await CategoryModel.create(TestCategory);
   });
 
   afterAll(async () => {
-    await CategoryModel.deleteMany({});
+    //await CategoryModel.deleteMany({});
     mongoose.connection.close();
   });
 

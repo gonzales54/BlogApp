@@ -9,13 +9,13 @@ export default class CategoryService {
   }
 
   static async getAllCategories() {
-    const categories = ConvertToJSON<ICategory[]>(await CategoryModel.find({}));
+    const categories = ConvertToJSON<ICategory[]>(await CategoryModel.find({}).sort({ category: 1}));
     return categories;
   }
 
   static async getCategoriesWithoutSelf(categoryID: string) {
     const categories = ConvertToJSON<ICategory[]>(
-      await CategoryModel.find({ _id: { $ne: categoryID } })
+      await CategoryModel.find({ _id: { $ne: categoryID } }).sort({ category: 1})
     );
     return categories;
   }
