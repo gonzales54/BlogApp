@@ -4,7 +4,7 @@ import ICategory from "@/types/Category/ICategory";
 import ConvertToJSON from "@/utility/ConvertToJSON";
 
 export default class CategoryService {
-  async connectToDatabase() {
+  static async connectToDatabase() {
     await connectToDatabase();
   }
 
@@ -34,5 +34,3 @@ export default class CategoryService {
   }
 }
 
-const Category = new CategoryService();
-Category.connectToDatabase();
