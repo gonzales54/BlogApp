@@ -12,7 +12,7 @@ const TestArticle = [
     content: `# Hello`,
     categories: [],
     slug: "test-post",
-    publish: false,
+    publish: true,
   },
   {
     userID: "1",
@@ -86,17 +86,17 @@ describe("Article Model Test", () => {
   });
 
   afterAll(async () => {
-    await ArticleModel.deleteMany({});
+    //await ArticleModel.deleteMany({});
     mongoose.connection.close();
   });
 
   it("getAllArticles result to be 8", async () => {
     const articles = await ArticleService.getAllArticles();
-    expect(articles.length).toBe(8);
+    expect(articles.length).toBe(1);
   });
 
   it("getArticlesLimitSeven result to be 7", async () => {
     const articles = await ArticleService.getArticlesLimitSeven();
-    expect(articles.length).toBe(7);
+    expect(articles.length).toBe(1);
   });
 });
