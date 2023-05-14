@@ -1,0 +1,151 @@
+.container {
+  width: 76%;
+  height: 100%;
+  margin: 0 auto 2rem auto;
+  .dateInformation {
+    margin-bottom: 1.25rem;
+    .createdAt {
+      font-size: 1rem;
+      
+    }
+  }
+  .articleTitle {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    font-size: 3rem;
+    border-bottom: solid 2px #14b8a6;
+  }
+  .markdown {
+    h1 {
+      font-size: 2.5rem;
+    }
+    h2 {
+      font-size: 2.125rem;
+    }
+    h3 {
+      font-size: 1.75rem;
+    }
+    h4 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    blockquote {
+      margin: 1.5rem 0;
+      padding-left: 0.5rem;
+      display: block;
+      border-left: solid 5px #14b8a6;
+    }
+    strong {
+      display: inline;
+    }
+    ul {
+      padding: 0 1rem;
+      li {
+        font-size: 1.25rem;
+        line-height: 1.75;
+        list-style: disc;
+        &:not(:last-child) {
+          margin-bottom: 0.25rem;
+        }
+      }
+    }
+    .codeBlock {
+      padding: 1.5rem 0;
+      .codeBlockHeader {
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .codeTitle {
+          font-size: 1.5rem;
+        }
+        .copyButton {
+          padding: 0.5rem;
+          font-size: 0.875rem;
+        }
+      }
+      .codeHighLight {
+        border-radius: 0.25rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .container {
+    width: 82.5%;
+    .dateInformation {
+      margin-bottom: 1.25rem;
+      .createdAt {
+        font-size: 1rem;
+        
+      }
+    }
+    .articleTitle {
+      margin-bottom: 2rem;
+      font-size: 3rem;
+    }
+    .markdown {
+      p {
+        font-size: 1.125rem;
+        line-height: 1.25;
+      }
+      .codeBlock {
+        .codeBlockHeader {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .codeTitle {
+            font-size: 1.5rem;
+          }
+          .copyButton {
+          }
+        }
+        .codeHighLight {
+  
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 90%;
+    .dateInformation {
+      margin-bottom: 1.25rem;
+      .createdAt {
+        font-size: 1rem;
+        
+      }
+    }
+    .articleTitle {
+      margin-bottom: 2rem;
+      font-size: 3rem;
+    }
+    .markdown {
+      p {
+        font-size: 1.125rem;
+        line-height: 1.25;
+      }
+      .codeBlock {
+        .codeBlockHeader {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .codeTitle {
+            font-size: 1.5rem;
+          }
+          .copyButton {
+          }
+        }
+        .codeHighLight {
+  
+        }
+      }
+    }
+  }
+}
