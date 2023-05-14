@@ -4,18 +4,14 @@ import GridArticle from "@/components/GridArticle/GridArticle";
 import Layout from "@/components/Layout/layout";
 import TopArticle from "@/components/TopArticle/TopArticle";
 import ArticleService from "@/service/ArticleService/ArticleService";
-import CategoryService from "@/service/CategoryService/CategoryService";
 import IArticle from "@/types/Article/IArticle";
-import ICategory from "@/types/Category/ICategory";
 
 export default function Home({
   article,
   articles,
-  categories,
 }: {
   article: IArticle;
   articles: IArticle[];
-  categories: ICategory[];
 }) {
   return (
     <>
@@ -38,7 +34,7 @@ export default function Home({
 
 export const getServerSideProps = async () => {
   const articles: IArticle[] = await ArticleService.getArticlesLimitSeven();
-  const categories: ICategory[] = await CategoryService.getAllCategories();
+  //const categories: ICategory[] = await CategoryService.getAllCategories();
 
   const topArticles: IArticle | null = articles.length
     ? articles.slice(0, 1)[0]
@@ -49,7 +45,6 @@ export const getServerSideProps = async () => {
     props: {
       article: topArticles,
       articles: gridArticles,
-      categories: categories,
     },
   };
 };
