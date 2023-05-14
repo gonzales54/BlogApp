@@ -20,7 +20,7 @@ export default function Header() {
         >
           <ul className={style.navContainer}>
             <li className={style.navItem}>
-              <Link href="" className={`${roboto.className} ${style.navLink}`}>
+              <Link href="/" className={`${roboto.className} ${style.navLink}`}>
                 Home
               </Link>
             </li>

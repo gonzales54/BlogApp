@@ -16,7 +16,7 @@ export default function ArticleCard({
   article: IArticle;
 }) {
   return (
-    <article className={style.articleCard}>
+    <article className={`${kleeOne.className} ${style.articleCard}`}>
       <Link href={`/articles/${article.slug}`} className={style.articleLink}>
         <div className={style.imageWrapper}>
           <Image width={0} height={0} src={NaturePhoto} alt="" className="" />

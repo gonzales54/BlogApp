@@ -92,11 +92,16 @@ describe("Article Model Test", () => {
 
   it("getAllArticles result to be 8", async () => {
     const articles = await ArticleService.getAllArticles();
-    expect(articles.length).toBe(1);
+    expect(articles.length).toBe(8);
   });
 
   it("getArticlesLimitSeven result to be 7", async () => {
     const articles = await ArticleService.getArticlesLimitSeven();
-    expect(articles.length).toBe(1);
+    expect(articles.length).toBe(7);
   });
+
+  it('getAnArticle result to be 1', async () => {
+    const article = await ArticleService.getAnArticle('test-post-1');
+    expect(article).not.toBeNull();
+  })
 });

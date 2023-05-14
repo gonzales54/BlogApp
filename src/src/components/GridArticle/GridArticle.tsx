@@ -1,11 +1,12 @@
+import { kleeOne } from "@/utility/font";
 import ArticleCard from "../ArticleCard/ArticleCard";
 import style from "./GridArticle.module.scss";
-import IArticle from "@/types/ArticleInterface";
+import IArticle from "@/types/Article/IArticle";
 
 export default function GridArticle({ articles }: { articles: IArticle[] }) {
   return (
     <div className={style.container}>
-      <h2 className={style.gridArticleTitle}>最近の投稿</h2>
+      <h2 className={`${kleeOne.className} ${style.gridArticleTitle}`}>最近の投稿</h2>
       <div className={style.articleContainer}>
         {articles.length
           ? articles.map((article: IArticle) => {

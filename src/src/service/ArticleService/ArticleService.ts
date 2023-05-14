@@ -21,6 +21,11 @@ export default class ArticleService {
     );
     return articles;
   }
+
+  static async getAnArticle(slug: string | string[]) {
+    const article: IArticle = ConvertToJSON<IArticle>(await ArticleModel.findOne({ slug: slug }))
+    return article;
+  }
 }
 
 const Article = new ArticleService();

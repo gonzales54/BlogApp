@@ -29,7 +29,6 @@ export default function Home({
       <main>
         <TopArticle article={article}/>
         <GridArticle articles={articles}/>
-        <CategoryButton categories={categories} />
       </main>
     </>
   );

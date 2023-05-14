@@ -1,6 +1,6 @@
 import Link from "next/link";
 import style from "./CategoryButton.module.scss";
-import ICategory from "@/types/CategoryInterface";
+import ICategory from "@/types/Category/ICategory";
 import { roboto } from "@/utility/font";
 
 export default function CategoryButton({
@@ -10,7 +10,7 @@ export default function CategoryButton({
 }) {
   return (
     <div className={style.container}>
-      <h2 className={style.categoryButtonTitle}>Category List</h2>
+      <h2 className={style.categoryButtonTitle}>カテゴリー</h2>
       <ul className={style.categoryButtonCotainer}>
         {categories.length
           ? categories.map((category: ICategory) => {
