@@ -9,12 +9,16 @@ export default class ArticleService {
   }
 
   static async getAllArticles() {
-    const articles: IArticle[] = ConvertToJSON<IArticle[]>(await ArticleModel.find({ publish: true }).sort({ createdAt: 1 }))
+    const articles: IArticle[] = ConvertToJSON<IArticle[]>(
+      await ArticleModel.find({ publish: true }).sort({ createdAt: 1 })
+    );
     return articles;
   }
 
   static async getArticlesLimitSeven() {
-    const articles: IArticle[] = ConvertToJSON<IArticle[]>(await ArticleModel.find({ publish: true }).sort({ createdAt: 1 }).limit(7));
+    const articles: IArticle[] = ConvertToJSON<IArticle[]>(
+      await ArticleModel.find({ publish: true }).sort({ createdAt: 1 }).limit(7)
+    );
     return articles;
   }
 }

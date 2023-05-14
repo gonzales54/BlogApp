@@ -86,7 +86,7 @@ describe("Article Model Test", () => {
   });
 
   afterAll(async () => {
-    //await ArticleModel.deleteMany({});
+    await ArticleModel.deleteMany({});
     mongoose.connection.close();
   });
 
