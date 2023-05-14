@@ -15,7 +15,7 @@ export default class ArticleService {
   }
 
   static async getAllArticles() {
-    const articles: IArticle = JSON.parse(
+    const articles: IArticle[] = JSON.parse(
       JSON.stringify(await ArticleModel.find({}))
     );
     return articles;
