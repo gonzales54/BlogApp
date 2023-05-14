@@ -5,6 +5,7 @@ import Layout from "@/components/Layout/layout";
 import TopArticle from "@/components/TopArticle/TopArticle";
 import ArticleService from "@/service/ArticleService/ArticleService";
 import IArticle from "@/types/Article/IArticle";
+import connectToDatabase from "@/lib/mongoose/connect/connect";
 
 export default function Home({
   article,
@@ -33,6 +34,8 @@ export default function Home({
 }
 
 export const getServerSideProps = async () => {
+  await connectToDatabase();
+  
   const articles: IArticle[] = await ArticleService.getArticlesLimitSeven();
   //const categories: ICategory[] = await CategoryService.getAllCategories();
 
