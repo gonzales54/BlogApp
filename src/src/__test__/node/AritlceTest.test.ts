@@ -1,8 +1,8 @@
 import { describe, beforeAll, afterAll, it, expect } from "@jest/globals";
 import mongoose from "mongoose";
 import connectToDatabase from "@/lib/mongoose/connect/connect";
-import ArticleService from "@/service/ArticleService/ArticleService";
 import ArticleModel from "@/lib/mongoose/models/ArticleModel";
+import ArticleService from "@/service/ArticleService/ArticleService";
 
 const TestArticle = [
   {
