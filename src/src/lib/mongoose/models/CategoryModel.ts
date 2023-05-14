@@ -1,10 +1,10 @@
 import { Model, Schema, model } from "mongoose";
 import ICategory from "@/types/Category/ICategory";
 
-let Category: Model<ICategory>;
+let CategoryModel: Model<ICategory>;
 
 try {
-  Category = model<ICategory>("Category");
+  CategoryModel = model<ICategory>("Category");
 } catch (e) {
   const CategorySchema = new Schema(
     {
@@ -22,7 +22,7 @@ try {
     }
   );
 
-  Category = model<ICategory>("Category", CategorySchema);
+  CategoryModel = model<ICategory>("Category", CategorySchema);
 }
 
-export default Category;
+export default CategoryModel;

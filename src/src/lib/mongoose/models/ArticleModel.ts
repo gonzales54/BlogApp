@@ -1,10 +1,10 @@
 import { Model, Schema, model } from "mongoose";
 import IArticle from "@/types/Article/IArticle";
 
-let Article: Model<IArticle>;
+let ArticleModel: Model<IArticle>;
 
 try {
-  Article = model<IArticle>("Article");
+  ArticleModel = model<IArticle>("Article");
 } catch (e) {
   const ArticleSchema = new Schema(
     {
@@ -28,7 +28,7 @@ try {
     }
   );
 
-  Article = model<IArticle>("Article", ArticleSchema);
+  ArticleModel = model<IArticle>("Article", ArticleSchema);
 }
 
-export default Article;
+export default ArticleModel;

@@ -1,10 +1,10 @@
 import { Model, Schema, model } from "mongoose";
 import IUser from "@/types/User/IUser";
 
-let User: Model<IUser>;
+let UserModel: Model<IUser>;
 
 try {
-  User = model<IUser>("User");
+  UserModel = model<IUser>("User");
 } catch (e) {
   const UserSchema = new Schema(
     {
@@ -24,7 +24,7 @@ try {
     }
   );
 
-  User = model<IUser>("User", UserSchema);
+  UserModel = model<IUser>("User", UserSchema);
 }
 
-export default User;
+export default UserModel;
