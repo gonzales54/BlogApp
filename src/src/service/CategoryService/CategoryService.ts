@@ -33,4 +33,3 @@ export default class CategoryService {
     return articles;
   }
 }
-
