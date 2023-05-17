@@ -22,7 +22,6 @@ export const getServerSideProps: GetServerSideProps = withPageAuthRequired({
     const article: IArticle = await ArticleService.getAnArticle(
       ctx.query.article!
     );
-    console.log(article);
 
     if (uid !== process.env.AUTH0_USER_NICKNAME) {
       return {

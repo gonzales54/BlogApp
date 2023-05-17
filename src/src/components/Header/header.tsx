@@ -3,7 +3,7 @@ import Link from "next/link";
 import { NavBarIcon, SearchIcon } from "../Icon/icon";
 import style from "./header.module.scss";
 import useHeader from "./useHeader";
-import { mrsSaintDelafield, roboto } from "@/utility/font";
+import { kleeOne, mrsSaintDelafield } from "@/utility/font";
 
 export default function Header() {
   const { isNavOpen, handleNavOpen } = useHeader();
@@ -20,17 +20,20 @@ export default function Header() {
         >
           <ul className={style.navContainer}>
             <li className={style.navItem}>
-              <Link href="/" className={`${roboto.className} ${style.navLink}`}>
-                Home
+              <Link
+                href="/"
+                className={`${kleeOne.className} ${style.navLink}`}
+              >
+                ホーム
               </Link>
             </li>
             {user ? (
               <li className={style.navItem}>
                 <Link
                   href={`/${user.nickname}/`}
-                  className={`${roboto.className} ${style.navLink}`}
+                  className={`${kleeOne.className} ${style.navLink}`}
                 >
-                  DashBoard
+                  ダッシュボード
                 </Link>
               </li>
             ) : (

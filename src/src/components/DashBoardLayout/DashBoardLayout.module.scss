@@ -1,6 +1,7 @@
 .dashBoardLayout {
   min-height: 100vh;
   display: flex;
+  position: relative;
   overflow: hidden;
   .dashBoardLayoutBody {
     width: 100%;

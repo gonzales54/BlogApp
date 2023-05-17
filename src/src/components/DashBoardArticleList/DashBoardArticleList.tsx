@@ -1,6 +1,7 @@
 import { useUser } from "@auth0/nextjs-auth0";
 import axios from "axios";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import { DeleteIcon, EditIcon } from "../Icon/icon";
 import style from "./DashBoardArticleList.module.scss";
 import IArticle from "@/types/Article/IArticle";
@@ -11,6 +12,7 @@ export default function DashBoardArticleList({
 }: {
   articles: IArticle[];
 }) {
+  const [isHoverArticle, setHoverArticle] = useState<boolean>(false);
   const { user } = useUser();
   const router = useRouter();
 
@@ -41,7 +43,12 @@ export default function DashBoardArticleList({
         {articles
           ? articles.map((article: IArticle) => {
               return (
-                <article className={style.article} key={article._id.toString()}>
+                <article
+                  className={style.article}
+                  key={article._id.toString()}
+                  onMouseEnter={() => setHoverArticle(true)}
+                  onMouseLeave={() => setHoverArticle(false)}
+                >
                   <h3 className={style.articleTitle}>{article.title}</h3>
                   <div className={style.articleButtonContainer}>
                     <button
