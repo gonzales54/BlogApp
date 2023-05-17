@@ -1,22 +1,46 @@
+import { useUser } from "@auth0/nextjs-auth0";
+import axios from "axios";
 import { useRouter } from "next/router";
+import { ChangeEvent } from "react";
 import style from "./CreateArticleForm.module.scss";
 import useCreateArticle from "@/hooks/useCreateArticle";
 
 export default function CreateArticleForm() {
   const router = useRouter();
   const handleSubmitForm = useCreateArticle();
+  const { user } = useUser();
+
+  const sendMarkdownFile = async (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    if (!(e.target instanceof HTMLInputElement)) return;
+
+    const file = e.target.files![0];
+
+    await axios.post("http://localhost:3000/api/markdown", file, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+
+    e.target.files = null;
+    router.push(`/${user?.nickname}/`);
+  };
+
   return (
     <div className={style.createArticleForm}>
       <div className={style.formHeader}>
         <h2 className={style.title}>Create New Article</h2>
         <label htmlFor="markdownFile" className={style.markdownFile}>
           Choose Markdown File
-          <input type="file" name="markdownFile" id="markdownFile" />
+          <input
+            type="file"
+            name="markdownFile"
+            id="markdownFile"
+            onChange={sendMarkdownFile}
+          />
         </label>
       </div>
       <form className={style.form} onSubmit={handleSubmitForm}>
         <div className={style.formItem}>
-          <label htmlFor="articleTitle">Title</label>
+          <label htmlFor="articleTitle">タイトル</label>
           <input
             type="text"
             name="articleTitle"
@@ -25,7 +49,7 @@ export default function CreateArticleForm() {
           />
         </div>
         <div className={style.formItem}>
-          <label htmlFor="description">Description</label>
+          <label htmlFor="description">記事の説明</label>
           <input
             type="text"
             name="description"
@@ -34,7 +58,7 @@ export default function CreateArticleForm() {
           />
         </div>
         <div className={style.formItem}>
-          <label htmlFor="content">Content</label>
+          <label htmlFor="content">コンテンツ</label>
           <textarea
             name="content"
             id="content"
@@ -44,7 +68,7 @@ export default function CreateArticleForm() {
           />
         </div>
         <div className={style.formItem}>
-          <label htmlFor="slug">Slug</label>
+          <label htmlFor="slug">スラグ</label>
           <input
             type="text"
             name="slug"
