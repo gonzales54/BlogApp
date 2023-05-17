@@ -1,12 +1,16 @@
+import { getSession, withApiAuthRequired } from "@auth0/nextjs-auth0";
 import matter from "gray-matter";
 import { NextApiRequest, NextApiResponse } from "next";
+import connectToDatabase from "@/lib/mongoose/connect/connect";
 import ArticleService from "@/service/ArticleService/ArticleService";
 import ICreateArticle from "@/types/Article/ICreateArticle";
 
-export default async function Markdown(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+async function Markdown(req: NextApiRequest, res: NextApiResponse) {
+  await connectToDatabase();
+  const session = getSession(req, res);
+  if (!session?.user!) {
+    return res.status(401).end();
+  }
   if (req.method === "POST") {
     const file = matter(req.body);
 
@@ -35,3 +39,5 @@ export default async function Markdown(
     });
   }
 }
+
+export default withApiAuthRequired(Markdown);
