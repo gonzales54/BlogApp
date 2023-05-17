@@ -1,16 +1,16 @@
+import { useUser } from "@auth0/nextjs-auth0";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { ChangeEvent } from "react";
 import style from "./CreateArticleForm.module.scss";
 import useCreateArticle from "@/hooks/useCreateArticle";
-import { useUser } from "@auth0/nextjs-auth0";
 
 export default function CreateArticleForm() {
   const router = useRouter();
   const handleSubmitForm = useCreateArticle();
   const { user } = useUser();
 
-  const sendMarkdownFile = async(e: ChangeEvent<HTMLInputElement>) => {
+  const sendMarkdownFile = async (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     if (!(e.target instanceof HTMLInputElement)) return;
 
@@ -21,7 +21,7 @@ export default function CreateArticleForm() {
     });
 
     e.target.files = null;
-    router.push(`/${user?.nickname}/`)
+    router.push(`/${user?.nickname}/`);
   };
 
   return (
