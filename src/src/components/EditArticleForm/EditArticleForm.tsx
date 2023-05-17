@@ -24,7 +24,7 @@ export default function EditArticleForm({ article }: { article: IArticle }) {
         onSubmit={(e) => handleSubmitForm(e, article._id.toString())}
       >
         <div className={style.formItem}>
-          <label htmlFor="description">Description</label>
+          <label htmlFor="description">記事の説明</label>
           <input
             type="text"
             name="description"
@@ -34,7 +34,7 @@ export default function EditArticleForm({ article }: { article: IArticle }) {
           />
         </div>
         <div className={style.formItem}>
-          <label htmlFor="content">Content</label>
+          <label htmlFor="content">コンテンツ</label>
           <textarea
             name="content"
             id=""

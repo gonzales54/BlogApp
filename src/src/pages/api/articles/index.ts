@@ -2,6 +2,7 @@ import { getSession, withApiAuthRequired } from "@auth0/nextjs-auth0";
 import { NextApiRequest, NextApiResponse } from "next";
 import connectToDatabase from "@/lib/mongoose/connect/connect";
 import ArticleService from "@/service/ArticleService/ArticleService";
+import ICreateArticle from "@/types/Article/ICreateArticle";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   await connectToDatabase();
@@ -15,7 +16,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     //const categories = await Category.findOneAndUpdate({ category: category });
     //const data = { ...values, categories: [categories?._id!] };
     const { ...values } = req.body;
-    const data = { ...values, categories: [], userID: "1" };
+    const data: ICreateArticle = { ...values, categories: [], userID: "1" };
 
     const article = await ArticleService.createAnArticleWithData(data);
     /*await Category.findOneAndUpdate(

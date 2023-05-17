@@ -2,7 +2,7 @@ import { useUser } from "@auth0/nextjs-auth0";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { DeleteIcon, EditIcon, ExternalLinkIcon } from "../Icon/icon";
+import { DeleteIcon, EditIcon } from "../Icon/icon";
 import style from "./DashBoardArticleList.module.scss";
 import IArticle from "@/types/Article/IArticle";
 import { kleeOne } from "@/utility/font";

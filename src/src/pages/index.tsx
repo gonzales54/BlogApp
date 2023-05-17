@@ -26,7 +26,7 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <TopArticle article={article} />
+        {article ? <TopArticle article={article} /> : ""}
         <GridArticle articles={articles} />
       </main>
     </>
