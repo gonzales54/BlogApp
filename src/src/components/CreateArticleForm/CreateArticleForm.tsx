@@ -16,7 +16,7 @@ export default function CreateArticleForm() {
 
     const file = e.target.files![0];
 
-    await axios.post("http://localhost:3000/api/markdown", file, {
+    await axios.post("/api/markdown", file, {
       headers: { "Content-Type": "multipart/form-data" },
     });
 
