@@ -1,10 +1,13 @@
-import ArticleService from "@/service/ArticleService/ArticleService";
-import ICreateArticle from "@/types/Article/ICreateArticle";
 import matter from "gray-matter";
 import { NextApiRequest, NextApiResponse } from "next";
+import ArticleService from "@/service/ArticleService/ArticleService";
+import ICreateArticle from "@/types/Article/ICreateArticle";
 
-export default async function Markdown(req: NextApiRequest, res: NextApiResponse) {
-  if(req.method === 'POST') {
+export default async function Markdown(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  if (req.method === "POST") {
     const file = matter(req.body);
 
     const formData = file.data;
@@ -15,7 +18,14 @@ export default async function Markdown(req: NextApiRequest, res: NextApiResponse
 
     const content: string = file.content;
 
-    const data: ICreateArticle = { title: title, description: description, content: content, slug: slug, categories: [], publish: publish }
+    const data: ICreateArticle = {
+      title: title,
+      description: description,
+      content: content,
+      slug: slug,
+      categories: [],
+      publish: publish,
+    };
 
     const article = await ArticleService.createAnArticleWithData(data);
 
@@ -24,4 +34,4 @@ export default async function Markdown(req: NextApiRequest, res: NextApiResponse
       article: article,
     });
   }
-};
+}
