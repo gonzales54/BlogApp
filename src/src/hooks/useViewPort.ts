@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useTopArticle() {
+export default function useViewPort() {
   const [width, setWidth] = useState<number>(0);
 
   useEffect(() => {
