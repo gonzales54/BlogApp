@@ -1,40 +1,24 @@
-import { useUser } from "@auth0/nextjs-auth0";
-import axios from "axios";
-import { useRouter } from "next/router";
-import { ChangeEvent } from "react";
+import { BackPreviousURLButton } from "../Button/button";
 import style from "./CreateArticleForm.module.scss";
-import useCreateArticle from "@/hooks/useCreateArticle";
+import useCreateArticle from "./useCreateArticle";
+import useSendMarkdownFile from "./useSendMarkdownFile";
 
 export default function CreateArticleForm() {
-  const router = useRouter();
+  const { markdownFileName, onSubmitForSendMarkdownFile } =
+    useSendMarkdownFile();
   const handleSubmitForm = useCreateArticle();
-  const { user } = useUser();
-
-  const sendMarkdownFile = async (e: ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    if (!(e.target instanceof HTMLInputElement)) return;
-
-    const file = e.target.files![0];
-
-    await axios.post("/api/markdown", file, {
-      headers: { "Content-Type": "multipart/form-data" },
-    });
-
-    e.target.files = null;
-    router.push(`/${user?.nickname}/`);
-  };
 
   return (
     <div className={style.createArticleForm}>
       <div className={style.formHeader}>
-        <h2 className={style.title}>Create New Article</h2>
+        <h2 className={style.title}>新しい記事の作成</h2>
         <label htmlFor="markdownFile" className={style.markdownFile}>
-          Choose Markdown File
+          {markdownFileName}
           <input
             type="file"
             name="markdownFile"
             id="markdownFile"
-            onChange={sendMarkdownFile}
+            onChange={onSubmitForSendMarkdownFile}
           />
         </label>
       </div>
@@ -45,7 +29,7 @@ export default function CreateArticleForm() {
             type="text"
             name="articleTitle"
             id="articleTitle"
-            placeholder="input article title"
+            placeholder="タイトル"
           />
         </div>
         <div className={style.formItem}>
@@ -54,7 +38,7 @@ export default function CreateArticleForm() {
             type="text"
             name="description"
             id="description"
-            placeholder="input article description"
+            placeholder="記事の説明"
           />
         </div>
         <div className={style.formItem}>
@@ -64,26 +48,15 @@ export default function CreateArticleForm() {
             id="content"
             rows={12}
             cols={30}
-            placeholder="input article content"
+            placeholder="記事のコンテンツ"
           />
         </div>
         <div className={style.formItem}>
           <label htmlFor="slug">スラグ</label>
-          <input
-            type="text"
-            name="slug"
-            id="slug"
-            placeholder="input article slug"
-          />
+          <input type="text" name="slug" id="slug" placeholder="記事のスラグ" />
         </div>
         <div className={style.formButtonContainer}>
-          <button
-            type="button"
-            className={style.cancelBtn}
-            onClick={() => router.back()}
-          >
-            Cancel
-          </button>
+          <BackPreviousURLButton />
           <button type="submit" className={style.submitBtn}>
             Submit
           </button>
