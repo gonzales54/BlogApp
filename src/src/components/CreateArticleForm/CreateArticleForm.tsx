@@ -53,12 +53,7 @@ export default function CreateArticleForm() {
         </div>
         <div className={style.formItem}>
           <label htmlFor="slug">スラグ</label>
-          <input
-            type="text"
-            name="slug"
-            id="slug"
-            placeholder="記事のスラグ"
-          />
+          <input type="text" name="slug" id="slug" placeholder="記事のスラグ" />
         </div>
         <div className={style.formButtonContainer}>
           <BackPreviousURLButton />

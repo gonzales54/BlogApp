@@ -35,7 +35,9 @@ export default function EditArticleForm({ article }: { article: IArticle }) {
             name="description"
             id="description"
             value={description}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setDescription(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setDescription(e.target.value)
+            }
           />
         </div>
         <div className={style.formItem}>
@@ -46,7 +48,9 @@ export default function EditArticleForm({ article }: { article: IArticle }) {
             rows={12}
             cols={30}
             value={content}
-            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setContent(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+              setContent(e.target.value)
+            }
           />
         </div>
         {/**
