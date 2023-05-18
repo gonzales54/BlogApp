@@ -29,7 +29,7 @@ export default function CreateArticleForm() {
             type="text"
             name="articleTitle"
             id="articleTitle"
-            placeholder="input article title"
+            placeholder="タイトル"
           />
         </div>
         <div className={style.formItem}>
@@ -38,7 +38,7 @@ export default function CreateArticleForm() {
             type="text"
             name="description"
             id="description"
-            placeholder="input article description"
+            placeholder="記事の説明"
           />
         </div>
         <div className={style.formItem}>
@@ -48,7 +48,7 @@ export default function CreateArticleForm() {
             id="content"
             rows={12}
             cols={30}
-            placeholder="input article content"
+            placeholder="記事のコンテンツ"
           />
         </div>
         <div className={style.formItem}>
@@ -57,7 +57,7 @@ export default function CreateArticleForm() {
             type="text"
             name="slug"
             id="slug"
-            placeholder="input article slug"
+            placeholder="記事のスラグ"
           />
         </div>
         <div className={style.formButtonContainer}>

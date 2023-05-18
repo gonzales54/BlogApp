@@ -33,7 +33,7 @@ export default function EditArticleForm({ article }: { article: IArticle }) {
           <input
             type="text"
             name="description"
-            id=""
+            id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
@@ -42,7 +42,7 @@ export default function EditArticleForm({ article }: { article: IArticle }) {
           <label htmlFor="content">コンテンツ</label>
           <textarea
             name="content"
-            id=""
+            id="content"
             rows={12}
             cols={30}
             value={content}
