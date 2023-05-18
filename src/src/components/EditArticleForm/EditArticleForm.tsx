@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { BackPreviousURLButton } from "../Button/button";
 import style from "./EditArticleForm.module.scss";
 import useEditArticle from "./useEditArticle";
@@ -35,7 +35,7 @@ export default function EditArticleForm({ article }: { article: IArticle }) {
             name="description"
             id="description"
             value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setDescription(e.target.value)}
           />
         </div>
         <div className={style.formItem}>
@@ -46,7 +46,7 @@ export default function EditArticleForm({ article }: { article: IArticle }) {
             rows={12}
             cols={30}
             value={content}
-            onChange={(e) => setContent(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setContent(e.target.value)}
           />
         </div>
         {/**

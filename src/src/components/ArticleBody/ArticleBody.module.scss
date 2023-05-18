@@ -6,14 +6,15 @@
     margin-bottom: 1.25rem;
     .createdAt {
       font-size: 1rem;
-      
+      color: #64748b;
     }
   }
   .articleTitle {
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    font-size: 3rem;
     border-bottom: solid 2px #14b8a6;
+    font-size: 3rem;
+    font-weight: 600;
   }
   .markdown {
     h1 {
