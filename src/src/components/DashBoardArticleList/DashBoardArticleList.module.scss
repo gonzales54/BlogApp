@@ -80,5 +80,30 @@
 }
 
 @media screen and (max-width: 450px) {
-
+  .dashBoardArticleList {
+    padding: 2rem 1rem 1.5rem 1rem;
+    .title {
+    }
+    .articleList {
+      .article {
+        .articleLink {
+          .articleTitle {
+          }
+          .articleButtonContainer {
+            .handleArticleButton {
+              
+            }
+          }
+        }
+      }
+    }
+    .pageNation {
+      .pageNationButton {
+      }
+      .pageNationPageLinkButtonContainer {
+        .pageNationPageLinkButton {
+        }
+      }
+    }
+  }
 }

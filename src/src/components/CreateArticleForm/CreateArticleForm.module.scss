@@ -68,10 +68,20 @@
 
 @media screen and (max-width: 500px) {
   .createArticleForm {
+    padding: 2rem 1rem 1.5rem 1rem;
     .formHeader {
-        margin-bottom: 2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
       .title {
-        font-size: 1.75rem;
+        margin-bottom: 1rem;
+        text-align: left;
+      }
+      .markdownFile {
+        font-size: 0.75rem;
+        input[type=file] {
+        }
       }
     }
     .form {
