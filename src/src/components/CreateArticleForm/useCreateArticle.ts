@@ -1,12 +1,8 @@
-import { useUser } from "@auth0/nextjs-auth0";
 import axios from "axios";
-import { useRouter } from "next/router";
 import { FormEvent } from "react";
+import Navigate from "@/utility/UserNavigate";
 
 export default function useCreateArticle() {
-  const router = useRouter();
-  const { user } = useUser();
-
   const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!(e.target instanceof HTMLFormElement)) return;
@@ -25,7 +21,7 @@ export default function useCreateArticle() {
         publish: true,
       });
 
-      router.push(`/${user?.nickname}/`);
+      Navigate();
       e.target.reset();
     } catch (e) {
       if (e instanceof Error) {

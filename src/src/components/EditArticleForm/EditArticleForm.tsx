@@ -1,14 +1,13 @@
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { BackPreviousURLButton } from "../Button/button";
 import style from "./EditArticleForm.module.scss";
-import useEditArticle from "@/hooks/useEditArticle";
+import useEditArticle from "./useEditArticle";
 import IArticle from "@/types/Article/IArticle";
 
 export default function EditArticleForm({ article }: { article: IArticle }) {
   const [description, setDescription] = useState<string>("");
   const [content, setContent] = useState<string>("");
 
-  const router = useRouter();
   const handleSubmitForm = useEditArticle();
 
   useEffect(() => {
@@ -16,9 +15,15 @@ export default function EditArticleForm({ article }: { article: IArticle }) {
     setContent(article.content);
   }, [article.content, article.description]);
 
+  /*function setMessages(e: InputEvent) {
+    e.preventDefault();
+    if(!(e.target instanceof HTMLDivElement)) return;
+    console.log(e.target.textContent)
+  }*/
+
   return (
     <div className={style.createArticleForm}>
-      <h2 className={style.title}>Edit Article</h2>
+      <h2 className={style.title}>記事の編集</h2>
       <form
         className={style.form}
         onSubmit={(e) => handleSubmitForm(e, article._id.toString())}
@@ -44,14 +49,11 @@ export default function EditArticleForm({ article }: { article: IArticle }) {
             onChange={(e) => setContent(e.target.value)}
           />
         </div>
+        {/**
+         * <div contentEditable onInput={setMessages} style={{ height: '1rem', width: '100%' }}></div>
+         */}
         <div className={style.formButtonContainer}>
-          <button
-            type="button"
-            className={style.cancelBtn}
-            onClick={() => router.back()}
-          >
-            Cancel
-          </button>
+          <BackPreviousURLButton />
           <button type="submit" className={style.submitBtn}>
             Edit
           </button>

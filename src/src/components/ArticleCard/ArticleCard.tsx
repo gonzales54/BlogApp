@@ -24,7 +24,7 @@ export default function ArticleCard({
         <div className={style.articleContent}>
           <span
             className={`${roboto.className} ${style.createdAt}`}
-            suppressContentEditableWarning
+            suppressHydrationWarning
           >
             {convertDateToYYMMDD(article.createdAt)}
           </span>
