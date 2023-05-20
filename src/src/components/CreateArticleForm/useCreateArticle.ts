@@ -1,8 +1,9 @@
+import useNavigate from "@/hooks/useNavigate";
 import axios from "axios";
 import { FormEvent } from "react";
-import Navigate from "@/utility/UserNavigate";
 
 export default function useCreateArticle() {
+  const { authNavigate } = useNavigate();
   const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!(e.target instanceof HTMLFormElement)) return;
@@ -21,7 +22,7 @@ export default function useCreateArticle() {
         publish: true,
       });
 
-      Navigate();
+      authNavigate();
       e.target.reset();
     } catch (e) {
       if (e instanceof Error) {

@@ -3,21 +3,25 @@
   display: flex;
   position: relative;
   overflow: hidden;
+
   .dashBoardLayoutBody {
     width: 100%;
+
     .dashBoardHeader {
-      padding: 1rem 1rem 0.5rem 1rem;
+      padding: 1rem 1rem 0.5rem;
       display: flex;
       justify-content: space-between;
       border-bottom: solid 1px rgba(#0f172a, 0.1);
     }    
+
     .dashBoardChildren {
       height: 100%;
       max-height: calc(100% - 77px);
-      padding: 2rem 1rem 1.5rem 1rem;
+      padding: 2rem 1rem 1.5rem;
       display: flex;
       flex-direction: column;
       overflow-y: hidden;
+
       &::-webkit-scrollbar {
         display: none;
       }

@@ -1,10 +1,12 @@
 .container {
   width: 90%;
-  margin: 0 auto 6rem auto;
+  margin: 0 auto 6rem;
+
   .articleCard {
     .articleLink {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       .imageWrapper {
         img {
           max-width: 100%;
@@ -14,19 +16,23 @@
           border-bottom-left-radius: 0.5rem;
         }
       }
+
       .articleContent {
         padding: 1.5rem;
+
         .createdAt {
-          margin: 0 0 1rem 0;
+          margin: 0 0 1rem;
           display: inline-block;
           color: #64748b;
           font-size: 0.75rem;
         }
+
         .title {
           margin-bottom: 1.5rem;
           font-size: 2.5rem;
           font-weight: 600;
         }
+
         .description {
           font-size: 1.5rem;
           line-height: 1.5;
@@ -37,7 +43,7 @@
 }
 
 
-@media screen and (max-width: 1050px) {
+@media screen and (width <= 1050px) {
   .container {
     .articleCard {
       .articleLink {
@@ -46,18 +52,21 @@
             height: 16rem;
           }
         }
+
         .articleContent {
           .createdAt {
-            margin: 0 0 1rem 0;
+            margin: 0 0 1rem;
             display: inline-block;
             color: #64748b;
             font-size: 0.75rem;
           }
+
           .title {
             margin-bottom: 1.5rem;
             font-size: 1.75rem;
             font-weight: 600;
           }
+
           .description {
             font-size: 1rem;
             line-height: 1.5;
@@ -68,9 +77,10 @@
   }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (width <= 850px) {
   .container {
     width: 82.5%;
+
     .articleCard {
       .articleLink {
         .imageWrapper {
@@ -78,13 +88,16 @@
             height: 16rem;
           }
         }
+
         .articleContent {
           .createdAt {
       
           }
+
           .title {
       
           }
+
           .description {
       
           }
@@ -95,9 +108,9 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (width <= 500px) {
   .container {
     width: 90%;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 2rem;
   }
 }

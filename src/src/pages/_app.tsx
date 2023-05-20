@@ -1,5 +1,4 @@
 import "destyle.css";
-import "@/styles/globals.css";
 import { UserProvider } from "@auth0/nextjs-auth0";
 import { NextPage } from "next";
 import { ReactElement, ReactNode } from "react";

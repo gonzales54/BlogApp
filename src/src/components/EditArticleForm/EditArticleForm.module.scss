@@ -1,25 +1,30 @@
 .createArticleForm {
   height: calc(100% - 77px);
   max-height: calc(100% - 77px);
-  padding: 2rem 2rem 1.5rem 2rem;
+  padding: 2rem 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
+
   .title {
     margin-bottom: 2rem;
     font-size: 1.75rem;
   }
+
   .form {
     margin-bottom: 2rem;
+
     .formItem {
       margin-bottom: 1rem;
       display: flex;
       flex-direction: column;
+
       label {
         margin-bottom: 0.5rem;
         display: inline-block;
       }
-      input[type=text], textarea {
+
+      input[type="text"], textarea {
         width: 100%;
         padding: 0.75rem 1rem;
         display: inline-block;
@@ -27,10 +32,12 @@
         border-radius: .125rem;
       }
     }
+
     .formButtonContainer {
       margin-top: 2rem;
       display: flex;
       column-gap: 1rem;
+
       .submitBtn {
         padding: 1rem 2rem;
         background-color: #14b8a6;
@@ -41,32 +48,36 @@
   }
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (width <= 1050px) {
   .createArticleForm {
 
   }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (width <= 850px) {
   .createArticleForm {
     
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (width <= 450px) {
   .createArticleForm {
-    padding: 2rem 1rem 1.5rem 1rem;
+    padding: 2rem 1rem 1.5rem;
+
     .title {
       margin-bottom: 2rem;
       font-size: 1.75rem;
     }
+
     .form {
       .formItem {
         label {
         }
-        input[type=text] {
+
+        input[type="text"] {
         }
       }
+
       .formButtonContainer {
         .submitBtn {
           width: 50%;

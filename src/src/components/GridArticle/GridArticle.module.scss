@@ -1,10 +1,12 @@
 .container {
   width: 76%;
-  margin: 0 auto 5rem auto;
+  margin: 0 auto 5rem;
+
   .gridArticleTitle {
     margin-bottom: 1rem;
     font-size: 1.75rem;
   }
+
   .articleContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -13,7 +15,7 @@
 
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (width <= 1050px) {
   .container {
     .articleContainer {
       grid-template-columns: repeat(2, 1fr);
@@ -21,20 +23,22 @@
   }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (width <= 850px) {
   .container {
     width: 82.5%;
-    margin: 0 auto 5rem auto;
+    margin: 0 auto 5rem;
+
     .articleContainer {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (width <= 500px) {
   .container {
     width: 90%;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 2rem;
+
     .articleContainer {
       grid-template-columns: 1fr;
       row-gap: 1rem;

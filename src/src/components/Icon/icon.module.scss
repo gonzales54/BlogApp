@@ -3,6 +3,7 @@
   display: inline-block;
   background-color: #14b8a6;
   border-radius: 0.25rem;
+
   .icon {
     color: #f8fafc;
   }
@@ -32,7 +33,7 @@
   height: 2rem;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (width <= 450px) {
   .icon {
     width: 1.5rem;
     height: 1.5rem;

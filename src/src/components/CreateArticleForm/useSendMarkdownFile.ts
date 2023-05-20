@@ -1,11 +1,12 @@
+import useNavigate from "@/hooks/useNavigate";
 import axios from "axios";
 import { ChangeEvent, useState } from "react";
-import Navigate from "@/utility/UserNavigate";
 
 export default function useSendMarkdownFile() {
   const [markdownFileName, setMarkdownFileName] = useState<string>(
     "マークダウンファイルを選択してください"
   );
+  const { authNavigate } = useNavigate();
 
   const onSubmitForSendMarkdownFile = async (
     e: ChangeEvent<HTMLInputElement>
@@ -21,7 +22,7 @@ export default function useSendMarkdownFile() {
     });
 
     e.target.files = null;
-    Navigate();
+    authNavigate();
   };
 
   return {

@@ -1,14 +1,17 @@
 .container {
   width: 76%;
   margin: 0 auto;
+
   .categoryButtonTitle {
     font-size: 1.75rem;
   }
+
   .categoryButtonCotainer{
     padding: 2rem 0;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     gap: 1rem;
+
     .categoryButtonLink {
       font-size: 1.125rem;
       font-weight: 400;
@@ -16,7 +19,7 @@
   }
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (width <= 1050px) {
   .container {
     .categoryButtonCotainer{
       grid-template-columns: repeat(5, 1fr);
@@ -24,9 +27,10 @@
   }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (width <= 850px) {
   .container {
     width: 82.5%;
+
     .categoryButtonCotainer{
       padding: 2rem 0;
       display: grid;
@@ -36,12 +40,14 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (width <= 500px) {
   .container {
     width: 90%;
+
     .categoryButtonTitle {
       font-size: 1.25rem;
     }
+
     .categoryButtonCotainer{
       padding: 2rem 0;
       display: grid;

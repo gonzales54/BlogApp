@@ -1,8 +1,9 @@
 import axios from "axios";
 import { FormEvent } from "react";
-import Navigate from "@/utility/UserNavigate";
+import useNavigate from "@/hooks/useNavigate";
 
 export default function useEditArticle() {
+  const { authNavigate } = useNavigate();
   const handleSubmitForm = async (
     e: FormEvent<HTMLFormElement>,
     id: string
@@ -21,9 +22,9 @@ export default function useEditArticle() {
 
     try {
       await axios.put("/api/articles", data);
-
-      Navigate();
       e.target.reset();
+
+      authNavigate();
     } catch (e) {
       if (e instanceof Error) {
         console.log(e.message);
